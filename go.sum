@@ -1,0 +1,6 @@
+github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
+github.com/flyteorg/flyte/flytestdlib v1.10.5-0.20231025215005-b30cb723afc7 h1:CVgm0Tf/a9kxbxFSxhmWZjNev77OS0pVYJTD1UlG+k8=
+github.com/flyteorg/flyte/flytestdlib v1.10.5-0.20231025215005-b30cb723afc7/go.mod h1:MWeLSA3CEg2y/z5W2Yr3e2oA4mmUWl0LVh3w9nS1BWM=
+github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
+github.com/stretchr/testify v1.8.4 h1:CcVxjf3Q8PM0mHUKJCdn+eZZtm5yQwehR5yeSVQQcUk=
+gopkg.in/yaml.v3 v3.0.1 h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA=
