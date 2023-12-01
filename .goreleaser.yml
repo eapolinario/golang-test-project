@@ -1,0 +1,15 @@
+project_name: golang-test
+builds:
+  - skip: true
+release:
+  github:
+    owner: eapolinario
+    name: golang-test-project
+  draft: false
+  prerelease: auto
+  discussion_category_name: General
+  name_template: "v{{.Version}} milestone release"
+  disable: false
+git:
+  ignore_tags:
+    - "prefix1/*"
