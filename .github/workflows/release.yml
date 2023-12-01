@@ -1,0 +1,47 @@
+name: Create release
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        required: true
+jobs:
+  generate-tags:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: `refs/tags/${{ github.event.inputs.version }}`,
+              sha: context.sha
+            })
+            const components = [
+              "prefix1",
+            ];
+            for (const c of components) {
+              github.rest.git.createRef({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                ref: `refs/tags/${c}/${{ github.event.inputs.version }}`,
+                sha: context.sha
+              })
+            }
+  release:
+    name: Release test
+    needs:
+      - generate-tags
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: run goreleaser
+        uses: goreleaser/goreleaser-action@v2
+        with:
+          version: latest
+          args: release --rm-dist
